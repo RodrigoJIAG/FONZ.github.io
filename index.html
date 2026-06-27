@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FONZ Academy</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+/* HERO */
+.hero{
+    min-height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 20px;
+    background:
+    linear-gradient(
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:50px;
+    color:#d8b15a;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:900px;
+    color:#d7d7d7;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* INFO */
+.info{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px 20px;
+}
+
+.info-card{
+    background:#111;
+    border:1px solid rgba(216,177,90,.2);
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+}
+
+.info-card h3{
+    color:#d8b15a;
+    margin-bottom:10px;
+}
+
+/* CURSOS */
+.cursos{
+    padding:60px 20px;
+}
+
+.cursos h2{
+    text-align:center;
+    color:#d8b15a;
+    margin-bottom:40px;
+    font-size:35px;
+}
+
+.contenedor{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+/* TARJETAS */
+.card{
+    background:linear-gradient(145deg,#111,#1c1c1c);
+    border-radius:20px;
+    padding:30px;
+    text-decoration:none;
+    color:white;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(216,177,90,.15);
+    transition:.3s;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+    background:#d8b15a;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#d8b15a;
+    box-shadow:0 15px 35px rgba(216,177,90,.25);
+}
+
+.card-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#d8b15a;
+    margin-bottom:15px;
+    text-align:left;
+}
+
+.card p{
+    color:#c9c9c9;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#d8b15a;
+    color:black;
+    padding:12px 18px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* IMPORTANTE */
+.importante{
+    max-width:1100px;
+    margin:50px auto;
+    background:#111;
+    border-radius:20px;
+    border:1px solid rgba(216,177,90,.15);
+    padding:35px;
+}
+
+.importante h2{
+    color:#d8b15a;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.importante p{
+    line-height:1.8;
+    color:#d7d7d7;
+}
+
+/* FRASE */
+.frase{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.frase h2{
+    color:#d8b15a;
+    font-size:30px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .cursos h2{
+        font-size:28px;
+    }
+
+    .frase h2{
+        font-size:22px;
+    }
+
+    .contenedor{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<h1>🎓 Plataforma de Capacitación FONZ</h1>
+
+<p>
+    Fortalece tus conocimientos, desarrolla nuevas habilidades y
+    prepárate para futuras oportunidades de crecimiento dentro de la empresa.
+</p>
+
+
+</section>
+
+<!-- OBJETIVOS -->
+
+<section class="info">
+
+
+<div class="info-card">
+    <h3>📚 Aprendizaje</h3>
+    <p>Refuerza tus conocimientos mediante cursos prácticos y actualizados.</p>
+</div>
+
+<div class="info-card">
+    <h3>🏆 Desarrollo</h3>
+    <p>Impulsa tu crecimiento profesional y fortalece tus competencias.</p>
+</div>
+
+<div class="info-card">
+    <h3>📈 Evaluación</h3>
+    <p>Comprueba tus conocimientos mediante evaluaciones en línea.</p>
+</div>
+
+
+</section>
+
+<!-- CURSOS -->
+
+<section class="cursos">
+
+
+<h2>📚 Cursos Disponibles</h2>
+
+<div class="contenedor">
+
+    <a href="Introduccion.html" class="card">
+
+        <div class="card-icon">📖</div>
+
+        <h3>Instrucciones de Trabajo</h3>
+
+        <p>
+            Aprende y fortalece los procedimientos operativos para
+            realizar tus actividades con seguridad, calidad y eficiencia.
+        </p>
+
+        <span class="btn">
+            Iniciar Curso →
+        </span>
+
+    </a>
+
+    <a href="Lineamiento.html" class="card">
+
+        <div class="card-icon">📋</div>
+
+        <h3>Lineamientos de Proceso / Consejo</h3>
+
+        <p>
+            Conoce las mejores prácticas y lineamientos para mejorar
+            el cumplimiento de los procesos internos.
+        </p>
+
+        <span class="btn">
+            Iniciar Curso →
+        </span>
+
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- IMPORTANTE -->
+
+<section class="importante">
+
+
+<h2>⚠ Información Importante</h2>
+
+<p>
+    La evaluación no te perjudicará en ningún aspecto; su finalidad es apoyar tu aprendizaje
+    y reforzar tus conocimientos. Podrás repetir la evaluación las veces que consideres necesarias
+    y consultar la información cuando lo requieras.
+    <br><br>
+    Cada avance que logres representa un paso más en tu desarrollo profesional y puede acercarte
+    a nuevas oportunidades de crecimiento dentro de la empresa.
+</p>
+
+
+</section>
+
+<!-- FRASE -->
+
+<section class="frase">
+
+
+<h2>
+    ✨ "Aprender constantemente es la mejor herramienta para crecer profesionalmente."
+</h2>
+
+
+</section>
+
+<footer>
+    © 2026 FONZ Academy | Sistemas
+</footer>
+
+</body>
+</html>

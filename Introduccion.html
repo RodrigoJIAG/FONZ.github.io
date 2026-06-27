@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página en Construcción</title>
+
+<style>
+
+:root {
+    --bg1: #000;
+    --bg2: #121212;
+    --gold: #c9a34a;
+    --muted: #bfc6c9;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:800px;
+    background:rgba(255,255,255,0.03);
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+    border:1px solid rgba(201,163,74,.15);
+    box-shadow:0 0 30px rgba(0,0,0,.5);
+}
+
+.logo{
+    width:140px;
+    margin-bottom:25px;
+    filter:brightness(1.2) sepia(1) hue-rotate(10deg) saturate(2);
+}
+
+.icon{
+    font-size:90px;
+    margin-bottom:20px;
+}
+
+h1{
+    color:var(--gold);
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+p{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.8;
+    max-width:600px;
+    margin:auto;
+}
+
+.linea{
+    width:120px;
+    height:4px;
+    background:var(--gold);
+    margin:30px auto;
+    border-radius:10px;
+}
+
+.estado{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    border-radius:30px;
+    background:rgba(201,163,74,.15);
+    color:var(--gold);
+    font-weight:bold;
+    border:1px solid rgba(201,163,74,.3);
+}
+
+footer{
+    margin-top:40px;
+    color:#777;
+    font-size:14px;
+}
+
+/* Animación */
+
+.icon{
+    animation:flotar 2s infinite ease-in-out;
+}
+
+@keyframes flotar{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+@media(max-width:768px){
+
+    .container{
+        padding:30px 20px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    .icon{
+        font-size:70px;
+    }
+
+    .logo{
+        width:100px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <img class="logo"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHwsEl-NEaICwe_oNIbJQkl9c0FgqFg_A6Yw&s"
+    alt="Logo">
+
+    <div class="icon">🚧</div>
+
+    <h1>Página en Construcción</h1>
+
+    <div class="linea"></div>
+
+    <p>
+        Estamos trabajando para habilitar esta sección y ofrecerte una mejor experiencia.
+        Próximamente encontrarás nuevas funcionalidades y contenido disponible.
+    </p>
+
+    <div class="estado">
+        EN DESARROLLO
+    </div>
+
+    <footer>
+        © 2026 SIGE - FONZ | SISTEMAS
+    </footer>
+
+</div>
+
+</body>
+</html>
