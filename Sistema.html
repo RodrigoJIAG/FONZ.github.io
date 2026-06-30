@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineamientos de Proceso / Consejo</title>
+
+<style>
+
+:root{
+    --bg1:#000;
+    --bg2:#121212;
+    --gold:#c9a34a;
+    --muted:#bfc6c9;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:white;
+    min-height:100vh;
+}
+
+/* CONTENEDOR */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+/* HERO */
+
+.hero{
+    background:rgba(255,255,255,0.03);
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+    margin-bottom:30px;
+    border:1px solid rgba(201,163,74,.15);
+}
+
+.hero img{
+    width:140px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    color:var(--gold);
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:var(--muted);
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* SECCIONES */
+
+.bloque{
+    background:rgba(255,255,255,0.03);
+    border-left:5px solid var(--gold);
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.bloque h2{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.bloque p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+.bloque ul{
+    padding-left:20px;
+    line-height:2;
+}
+
+/* MODULOS */
+
+.titulo{
+    text-align:center;
+    margin:40px 0;
+}
+
+.titulo h2{
+    color:var(--gold);
+    font-size:32px;
+}
+
+.modulos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.modulo{
+    background:#111;
+    border-radius:15px;
+    padding:25px;
+    cursor:pointer;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.modulo:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:0 10px 30px rgba(201,163,74,.20);
+}
+
+.icono{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.modulo h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.modulo p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:linear-gradient(90deg,var(--gold),#e0b76b);
+    color:#111;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* IMPORTANTE */
+
+.importante{
+    margin-top:40px;
+    background:#111;
+    border-radius:15px;
+    padding:30px;
+    border:1px solid rgba(201,163,74,.15);
+}
+
+.importante h2{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.importante p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+/* FRASE */
+
+.frase{
+    text-align:center;
+    margin-top:40px;
+    padding:30px;
+}
+
+.frase h2{
+    color:var(--gold);
+    font-size:28px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    padding:20px;
+    text-align:center;
+    color:#888;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    padding:20px;
+}
+
+.modal-content{
+    background:#111;
+    color:white;
+    width:100%;
+    max-width:700px;
+    border-radius:15px;
+    padding:30px;
+    position:relative;
+    border:1px solid rgba(201,163,74,.20);
+}
+
+.modal-content h2{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.modal-content p{
+    line-height:1.8;
+}
+
+.cerrar{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:30px;
+    cursor:pointer;
+    color:white;
+}
+
+.modal img{
+    width:100%;
+    border-radius:10px;
+}
+
+.link-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:linear-gradient(90deg,var(--gold),#e0b76b);
+    color:#111;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .container{
+        padding:15px;
+    }
+
+    .hero{
+        padding:30px 20px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .titulo h2{
+        font-size:26px;
+    }
+
+    .frase h2{
+        font-size:22px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="hero">
+
+        <img src="img/logo.png" alt="Logo">
+
+        <h1>Sistema de Gestión / Procesos</h1>
+
+        <p>
+            Conoce los principios, procedimientos y herramientas que conforman el
+            Sistema de Gestión de la organización, fortaleciendo el cumplimiento de
+            los procesos, la mejora continua y la calidad en cada una de las actividades.
+        </p>
+
+    </div>
+
+    <div class="bloque">
+
+        <h2>🎯 Objetivo del Curso</h2>
+
+        <p>
+            Comprender la estructura del Sistema de Gestión, su importancia dentro de
+            la organización y la forma correcta de aplicar los procesos establecidos
+            para garantizar la calidad, el cumplimiento y la mejora continua.
+        </p>
+
+    </div>
+
+    <div class="bloque">
+
+        <h2>📚 ¿Qué aprenderás?</h2>
+
+        <ul>
+            <li>¿Qué es un Sistema de Gestión?</li>
+            <li>Importancia de los procesos dentro de la organización.</li>
+            <li>Identificación de procedimientos y responsabilidades.</li>
+            <li>Mejora continua y cumplimiento de los estándares establecidos.</li>
+        </ul>
+
+    </div>
+
+    <div class="titulo">
+        <h2>Contenido del Curso</h2>
+    </div>
+
+    <div class="modulos">
+
+        <div class="modulo"
+        onclick="abrirTextoModal(
+        'Sistema de Gestión',
+        'Un Sistema de Gestión es el conjunto de políticas, procesos y procedimientos que permiten a la organización operar de manera eficiente, cumplir sus objetivos y fomentar la mejora continua.'
+        )">
+
+            <div class="icono">⚙️</div>
+
+            <h3>Módulo 1</h3>
+
+            <p>Introducción al Sistema de Gestión.</p>
+
+            <span class="btn">Ver módulo →</span>
+
+        </div>
+
+        <div class="modulo"
+onclick="abrirPDFModal(
+'Sistema de Gestión / Procesos',
+'img/Sistema_de_Gestion.pdf'
+)">
+
+    <div class="icono">🗂️</div>
+
+    <h3>Módulo 2</h3>
+
+    <p>Mapa de procesos y estructura del Sistema de Gestión.</p>
+
+    <span class="btn">Ver contenido →</span>
+
+</div>
+
+        </div>
+
+        <div class="modulo"
+        onclick="abrirTextoModal(
+        'Evaluación',
+        'Pon a prueba los conocimientos adquiridos durante el curso.',
+        'https://docs.google.com/forms/d/e/TU_FORMULARIO/viewform'
+        )">
+
+            <div class="icono">🏆</div>
+
+            <h3>Módulo 3</h3>
+
+            <p>Evaluación de conocimientos.</p>
+
+            <span class="btn">Iniciar evaluación →</span>
+
+        </div>
+
+    </div>
+    <div class="importante">
+
+        <h2>⚠ Importante</h2>
+
+        <p>
+            El Sistema de Gestión es una herramienta fundamental para asegurar la calidad,
+        la eficiencia y el cumplimiento de los procesos de la organización. Te recomendamos
+        revisar el contenido antes de realizar la evaluación y consultar el material de apoyo
+        cuando lo necesites.
+        </p>
+
+    </div>
+
+    <div class="frase">
+
+        <h2>
+            ✨ "Aprender constantemente es la mejor herramienta para crecer profesionalmente."
+        </h2>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Cursos | Sistemas
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+
+        <h2 id="tituloModal"></h2>
+
+        <p id="textoModal"></p>
+
+        <a id="linkModal" class="link-btn" target="_blank" style="display:none;">
+            Ir a la evaluación
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function abrirTextoModal(titulo,texto,link=""){
+
+    document.getElementById("tituloModal").innerText=titulo;
+    document.getElementById("textoModal").innerText=texto;
+
+    const boton=document.getElementById("linkModal");
+
+    if(link!=""){
+        boton.href=link;
+        boton.style.display="inline-block";
+    }else{
+        boton.style.display="none";
+    }
+
+    document.getElementById("modal").style.display="flex";
+}
+
+function abrirImagenModal(imagen){
+
+    document.getElementById("tituloModal").innerHTML="Lineamientos";
+    document.getElementById("textoModal").innerHTML=
+    '<img src="'+imagen+'" alt="Lineamientos">';
+
+    document.getElementById("linkModal").style.display="none";
+
+    document.getElementById("modal").style.display="flex";
+}
+
+function cerrarModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+window.onclick=function(e){
+
+    if(e.target==document.getElementById("modal")){
+        cerrarModal();
+    }
+
+}
+
+function abrirPDFModal(titulo, archivo){
+
+    document.getElementById("tituloModal").innerText = titulo;
+
+    document.getElementById("textoModal").innerHTML = `
+        <iframe
+            src="${archivo}"
+            width="100%"
+            height="600"
+            style="border:none; border-radius:10px;">
+        </iframe>
+    `;
+
+    document.getElementById("linkModal").style.display = "none";
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+</script>
+
+</body>
+</html>
