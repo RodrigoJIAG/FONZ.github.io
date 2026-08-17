@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atencion al Cliente y Manejo de Conflictos</title>
+
+<style>
+
+:root{
+    --bg1:#000;
+    --bg2:#121212;
+    --gold:#c9a34a;
+    --muted:#bfc6c9;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:white;
+    min-height:100vh;
+}
+
+/* CONTENEDOR */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+/* HERO */
+
+.hero{
+    background:rgba(255,255,255,0.03);
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+    margin-bottom:30px;
+    border:1px solid rgba(201,163,74,.15);
+}
+
+.hero img{
+    width:140px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    color:var(--gold);
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:var(--muted);
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* SECCIONES */
+
+.bloque{
+    background:rgba(255,255,255,0.03);
+    border-left:5px solid var(--gold);
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.bloque h2{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.bloque p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+.bloque ul{
+    padding-left:20px;
+    line-height:2;
+}
+
+/* MODULOS */
+
+.titulo{
+    text-align:center;
+    margin:40px 0;
+}
+
+.titulo h2{
+    color:var(--gold);
+    font-size:32px;
+}
+
+.modulos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.modulo{
+    background:#111;
+    border-radius:15px;
+    padding:25px;
+    cursor:pointer;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.modulo:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:0 10px 30px rgba(201,163,74,.20);
+}
+
+.icono{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.modulo h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.modulo p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:linear-gradient(90deg,var(--gold),#e0b76b);
+    color:#111;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* IMPORTANTE */
+
+.importante{
+    margin-top:40px;
+    background:#111;
+    border-radius:15px;
+    padding:30px;
+    border:1px solid rgba(201,163,74,.15);
+}
+
+.importante h2{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.importante p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+/* FRASE */
+
+.frase{
+    text-align:center;
+    margin-top:40px;
+    padding:30px;
+}
+
+.frase h2{
+    color:var(--gold);
+    font-size:28px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    padding:20px;
+    text-align:center;
+    color:#888;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    padding:20px;
+}
+
+.modal-content{
+    background:#111;
+    color:white;
+    width:100%;
+    max-width:700px;
+    border-radius:15px;
+    padding:30px;
+    position:relative;
+    border:1px solid rgba(201,163,74,.20);
+}
+
+.modal-content h2{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.modal-content p{
+    line-height:1.8;
+}
+
+.cerrar{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:30px;
+    cursor:pointer;
+    color:white;
+}
+
+.modal img{
+    width:100%;
+    border-radius:10px;
+}
+
+.link-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:linear-gradient(90deg,var(--gold),#e0b76b);
+    color:#111;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .container{
+        padding:15px;
+    }
+
+    .hero{
+        padding:30px 20px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .titulo h2{
+        font-size:26px;
+    }
+
+    .frase h2{
+        font-size:22px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="hero">
+
+        <img src="img/logo.png" alt="Logo">
+
+        <h1>Atencion al Cliente y Manejo de Conflictos</h1>
+
+        <p>
+            Desarrolla habilidades de atención al cliente y manejo de conflictos, 
+            fortaleciendo la comunicación efectiva, la empatía y la resolución oportuna 
+            de situaciones, con el propósito de brindar un servicio de calidad y generar experiencias 
+            positivas en cada interacción.
+
+
+    </div>
+
+    <div class="bloque">
+
+        <h2>🎯 Objetivo del Curso</h2>
+
+        <p>
+           Desarrollar habilidades y conocimientos para brindar una atención al cliente efectiva, 
+           aplicando técnicas de comunicación, empatía y manejo adecuado de conflictos, 
+           con el fin de resolver situaciones de manera oportuna, mantener relaciones positivas y 
+           garantizar una experiencia de servicio de calidad.
+        </p>
+
+    </div>
+
+    <div class="bloque">
+
+        <h2>📚 ¿Qué aprenderás?</h2>
+
+        <ul>
+            <li>Actitud y servicio profesional.</li>
+            <li>Comunicacion efectiva.</li>
+            <li>Satisfaccion al cliente.</li>
+            <li>Negociacion y busqueda de acuerdos.</li>
+        </ul>
+
+    </div>
+
+    <div class="titulo">
+        <h2>Contenido del Curso</h2>
+    </div>
+
+    <div class="modulos">
+
+        <div class="modulo"
+        onclick="abrirPDFModal(
+        'Manejo de conflictos y Atencion al cliente',
+        'img/Conflictos.pdf.'
+        )">
+
+            <div class="icono">⚙️</div>
+
+            <h3>Módulo 1</h3>
+
+            <p>Manejo de conflictos.</p>
+
+            <span class="btn">Ver módulo →</span>
+
+        </div>
+
+        <div class="modulo"
+onclick="abrirPDFModal(
+'Manejo de conflictos y Atencion al cliente',
+'img/Atencion.pdf'
+)">
+
+    <div class="icono">🗂️</div>
+
+    <h3>Módulo 2</h3>
+
+    <p>Atencion al cliente.</p>
+
+    <span class="btn">Ver contenido →</span>
+
+</div>
+
+        </div>
+<!--ACTUALIZAR LINK PARA EVALUACION-->
+        <div class="modulo"
+        onclick="abrirTextoModal(
+        'Evaluación',
+        'Pon a prueba los conocimientos adquiridos durante el curso.',
+        ''
+        )">
+
+            <div class="icono">🏆</div>
+
+            <h3>Módulo 3</h3>
+
+            <p>Proximamente.</p>
+
+            <span class="btn">Proximamente. →</span>
+
+        </div>
+
+    </div>
+    <div class="importante">
+
+        <h2>⚠ Importante</h2>
+
+        <p>
+           El manejo de conflictos y atencion al cliente es fundamental para fortalecer la confianza, brindar un servicio de calidad y 
+           mantener relaciones positivas con los clientes. Te recomendamos revisar el contenido antes de realizar
+            la evaluación y consultar el material de apoyo cuando lo necesites.
+        </p>
+
+    </div>
+
+    <div class="frase">
+
+        <h2>
+            ✨ "Aprender constantemente es la mejor herramienta para crecer profesionalmente."
+        </h2>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Cursos | Sistemas
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+
+        <h2 id="tituloModal"></h2>
+
+        <p id="textoModal"></p>
+
+        <a id="linkModal" class="link-btn" target="_blank" style="display:none;">
+            Ir a la evaluación
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function abrirTextoModal(titulo,texto,link=""){
+
+    document.getElementById("tituloModal").innerText=titulo;
+    document.getElementById("textoModal").innerText=texto;
+
+    const boton=document.getElementById("linkModal");
+
+    if(link!=""){
+        boton.href=link;
+        boton.style.display="inline-block";
+    }else{
+        boton.style.display="none";
+    }
+
+    document.getElementById("modal").style.display="flex";
+}
+
+function abrirImagenModal(imagen){
+
+    document.getElementById("tituloModal").innerHTML="Lineamientos";
+    document.getElementById("textoModal").innerHTML=
+    '<img src="'+imagen+'" alt="Lineamientos">';
+
+    document.getElementById("linkModal").style.display="none";
+
+    document.getElementById("modal").style.display="flex";
+}
+
+function cerrarModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+window.onclick=function(e){
+
+    if(e.target==document.getElementById("modal")){
+        cerrarModal();
+    }
+
+}
+
+function abrirPDFModal(titulo, archivo){
+
+    document.getElementById("tituloModal").innerText = titulo;
+
+    document.getElementById("textoModal").innerHTML = `
+        <iframe
+            src="${archivo}"
+            width="100%"
+            height="600"
+            style="border:none; border-radius:10px;">
+        </iframe>
+    `;
+
+    document.getElementById("linkModal").style.display = "none";
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+</script>
+
+</body>
+</html>
